@@ -29,6 +29,10 @@ const ACCEPTED_ORIGINS = [
   'https://myapp.com'
   ]
 
+app.get('/', (req, res) => {
+  res.json({message: 'Hello World'})
+})
+
 // Todos los recrsos MOVIES se identifican con /movies
 app.get('/movies', (req, res) => {
   // const origin = req.header('origin')
