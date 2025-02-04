@@ -1,0 +1,33 @@
+### Recuperar todas las peliculas
+GET http://localhost:1234/movies
+
+### Recperar una pelicula por id
+GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+### Recuperar todas las peliculas por un genero
+GET http://localhost:1234/movies?genre=Action
+
+### Crear una pelicula con POST
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "title": "The Godfather",
+  "year": 1972,
+  "director": "Francis Ford Coppola",
+  "duration": 175,
+  "poster": "https://www.imdb.com/title/tt0068646/mediaviewer/rm4261013760/",
+  "genre": [
+    "Drama",
+    "Crime"
+  ]
+}
+
+### Actualizar una pelicula
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+  "title": "The HOla",
+  "year": 1993
+}
