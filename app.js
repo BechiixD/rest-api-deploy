@@ -6,21 +6,22 @@ const { validateMovie, validatePartialMovie } = require('./schemas/movies')
 
 const app = express()
 app.use(express.json())
-app.use(cors({
-  origin: (origin, callback) => {
-    const ACCEPTED_ORIGINS = [
-      'http://localhost:3000',
-      'http://localhost:3001',
-      'https://myapp.com'
-    ]
+app.use(cors())
+// app.use(cors({
+//   origin: (origin, callback) => {
+//     const ACCEPTED_ORIGINS = [
+//       'http://localhost:3000',
+//       'http://localhost:3001',
+//       'https://myapp.com'
+//     ]
 
-    if (ACCEPTED_ORIGINS.includes(origin) || !origin) {
-      callback(null, true)
-    }
+//     if (ACCEPTED_ORIGINS.includes(origin) || !origin) {
+//       callback(null, true)
+//     }
 
-    return callback(new Error('Not allowed by CORS'))
-  }}
-))
+//     return callback(new Error('Not allowed by CORS'))
+//   }}
+// ))
 app.disable('x-powered-by')
 
 const ACCEPTED_ORIGINS = [
